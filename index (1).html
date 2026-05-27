@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joy Nyong'a — Virtual Assistant & M&E Specialist</title>
+  <meta name="description" content="Certified Virtual Assistant and M&E Specialist based in Kenya. Available for remote work globally." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ff-display: 'Playfair Display', serif;
+      --ff-body: 'DM Sans', sans-serif;
+      --coral-50: #FAECE7;
+      --coral-100: #F5C4B3;
+      --coral-200: #F0997B;
+      --coral-600: #993C1D;
+      --coral-700: #7A3016;
+      --coral-800: #712B13;
+      --teal-50: #E1F5EE;
+      --teal-100: #9FE1CB;
+      --teal-600: #0F6E56;
+      --teal-800: #085041;
+      --gray-50: #F1EFE8;
+      --gray-100: #D3D1C7;
+      --gray-200: #B4B2A9;
+      --gray-400: #888780;
+      --gray-800: #444441;
+      --bg: #FDFCFA;
+      --bg-card: #FFFFFF;
+      --bg-muted: #F7F5F1;
+      --text-primary: #1A1916;
+      --text-secondary: #5F5E5A;
+      --text-tertiary: #888780;
+      --border: rgba(0,0,0,0.1);
+      --border-soft: rgba(0,0,0,0.06);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --max-w: 760px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253,252,250,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border-soft);
+      padding: 0.85rem 1.5rem;
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--ff-display);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--coral-600); }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 0 3rem;
+      border-bottom: 0.5px solid var(--border-soft);
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--coral-600);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .hero-name {
+      font-family: var(--ff-display);
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+    .hero-title {
+      font-family: var(--ff-display);
+      font-size: 19px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+    .hero-tagline {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      max-width: 440px;
+      margin-bottom: 1.75rem;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 13px;
+      border-radius: 20px;
+      letter-spacing: 0.4px;
+    }
+    .badge-coral { background: var(--coral-50); color: var(--coral-800); border: 0.5px solid var(--coral-100); }
+    .badge-teal  { background: var(--teal-50);  color: var(--teal-800);  border: 0.5px solid var(--teal-100); }
+
+    .avatar {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      background: var(--coral-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--coral-800);
+      border: 2px solid var(--coral-100);
+      flex-shrink: 0;
+    }
+
+    /* Sections */
+    section {
+      padding: 2.75rem 0;
+      border-bottom: 0.5px solid var(--border-soft);
+      animation: fadeUp 0.6s ease both;
+    }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 10.5px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    /* About */
+    .about-card {
+      background: var(--gray-50);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      border: 0.5px solid var(--border);
+    }
+    .about-card p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    .highlight { color: var(--coral-700); font-weight: 500; }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .service-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      border: 0.5px solid var(--border);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      border-color: var(--coral-200);
+      transform: translateY(-2px);
+    }
+    .service-icon {
+      font-size: 22px;
+      color: var(--coral-600);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .service-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 5px;
+    }
+    .service-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 13px;
+      border-radius: var(--radius-md);
+      border: 0.5px solid var(--border);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      background: var(--bg-card);
+      transition: background 0.2s;
+    }
+    .skill-item:hover { background: var(--teal-50); }
+    .skill-item i { font-size: 15px; color: var(--teal-600); flex-shrink: 0; }
+
+    /* Projects */
+    .project-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
+      margin-bottom: 12px;
+      transition: box-shadow 0.2s;
+    }
+    .project-card:last-child { margin-bottom: 0; }
+    .project-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 9px;
+    }
+    .project-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+    .project-type {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--teal-50);
+      color: var(--teal-800);
+      font-weight: 500;
+      white-space: nowrap;
+      border: 0.5px solid var(--teal-100);
+      flex-shrink: 0;
+    }
+    .project-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .project-tag {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      background: var(--bg-muted);
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 1.75rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      border: 0.5px solid var(--border);
+      background: var(--bg-card);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .contact-item:hover { border-color: var(--coral-200); }
+    .contact-item i { font-size: 17px; color: var(--coral-600); flex-shrink: 0; }
+    .contact-label {
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .contact-value {
+      font-size: 13px;
+      color: var(--text-primary);
+      font-weight: 400;
+    }
+    .cta-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 11px 22px;
+      background: var(--coral-600);
+      color: #fff;
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      font-family: var(--ff-body);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--coral-800); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 11px 22px;
+      background: transparent;
+      color: var(--text-primary);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      font-family: var(--ff-body);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: var(--bg-muted); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      border-top: 0.5px solid var(--border-soft);
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    section:nth-of-type(1) { animation-delay: 0.05s; }
+    section:nth-of-type(2) { animation-delay: 0.1s; }
+    section:nth-of-type(3) { animation-delay: 0.15s; }
+    section:nth-of-type(4) { animation-delay: 0.2s; }
+    section:nth-of-type(5) { animation-delay: 0.25s; }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .avatar { width: 80px; height: 80px; font-size: 26px; }
+      .hero-name { font-size: 32px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Joy Nyong'a</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero-inner">
+          <div>
+            <p class="hero-eyebrow">Virtual Assistant · M&E Specialist · AI Trainer</p>
+            <h1 class="hero-name">Joy Nyong'a</h1>
+            <p class="hero-title">Detail-driven. Reliable. Remote-ready.</p>
+            <p class="hero-tagline">I help busy professionals and organizations stay organized, on track, and data-informed — from Nairobi, working globally.</p>
+            <div class="hero-badges">
+              <span class="badge badge-coral">VA Certified</span>
+              <span class="badge badge-coral">M&E Trained</span>
+              <span class="badge badge-teal">AI Data Annotator</span>
+              <span class="badge badge-teal">Remote First</span>
+            </div>
+          </div>
+          <div class="avatar" aria-hidden="true">JN</div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <section id="about">
+        <p class="section-label">About me</p>
+        <div class="about-card">
+          <p>I'm a <span class="highlight">certified Virtual Assistant</span> with a background in <span class="highlight">Monitoring &amp; Evaluation</span> — meaning I bring both organizational discipline and analytical thinking to every client I support. I have hands-on experience in <span class="highlight">AI data annotation and training</span> through Mindrift, which gives me an edge in tech-forward environments. I'm meticulous, communicate proactively, and take ownership of tasks so you never have to micromanage.</p>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services">
+        <p class="section-label">Services</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="ti ti-mail service-icon" aria-hidden="true"></i>
+            <p class="service-title">Email &amp; Calendar Management</p>
+            <p class="service-desc">Inbox organization, scheduling, meeting coordination, and follow-ups</p>
+          </div>
+          <div class="service-card">
+            <i class="ti ti-chart-bar service-icon" aria-hidden="true"></i>
+            <p class="service-title">Data Entry &amp; Reporting</p>
+            <p class="service-desc">Spreadsheet management, data cleaning, and report formatting</p>
+          </div>
+          <div class="service-card">
+            <i class="ti ti-search service-icon" aria-hidden="true"></i>
+            <p class="service-title">Research &amp; Summaries</p>
+            <p class="service-desc">Online research, competitor analysis, and concise written summaries</p>
+          </div>
+          <div class="service-card">
+            <i class="ti ti-file-analytics service-icon" aria-hidden="true"></i>
+            <p class="service-title">M&amp;E Support</p>
+            <p class="service-desc">Logical frameworks, data collection tools, indicator tracking for NGOs</p>
+          </div>
+          <div class="service-card">
+            <i class="ti ti-robot service-icon" aria-hidden="true"></i>
+            <p class="service-title">AI Data Tasks</p>
+            <p class="service-desc">Data annotation, RLHF tasks, content labeling, and quality review</p>
+          </div>
+          <div class="service-card">
+            <i class="ti ti-layout-kanban service-icon" aria-hidden="true"></i>
+            <p class="service-title">Project Coordination</p>
+            <p class="service-desc">Task tracking, deadline monitoring, stakeholder updates</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <p class="section-label">Tools &amp; skills</p>
+        <div class="skills-grid">
+          <div class="skill-item"><i class="ti ti-brand-google" aria-hidden="true"></i>Google Workspace</div>
+          <div class="skill-item"><i class="ti ti-brand-office" aria-hidden="true"></i>Microsoft Office</div>
+          <div class="skill-item"><i class="ti ti-layout-kanban" aria-hidden="true"></i>Notion / Trello</div>
+          <div class="skill-item"><i class="ti ti-brush" aria-hidden="true"></i>Canva</div>
+          <div class="skill-item"><i class="ti ti-video" aria-hidden="true"></i>Zoom / Meet</div>
+          <div class="skill-item"><i class="ti ti-brand-slack" aria-hidden="true"></i>Slack</div>
+          <div class="skill-item"><i class="ti ti-forms" aria-hidden="true"></i>KoboToolbox</div>
+          <div class="skill-item"><i class="ti ti-tag" aria-hidden="true"></i>Data Annotation</div>
+          <div class="skill-item"><i class="ti ti-pencil" aria-hidden="true"></i>Report Writing</div>
+          <div class="skill-item"><i class="ti ti-sitemap" aria-hidden="true"></i>Logical Frameworks</div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <p class="section-label">Sample projects</p>
+
+        <div class="project-card">
+          <div class="project-header">
+            <p class="project-title">NGO Program Tracker — Monitoring &amp; Evaluation Framework</p>
+            <span class="project-type">M&amp;E</span>
+          </div>
+          <p class="project-desc">Developed a results framework and indicator tracking spreadsheet for a hypothetical community health program. Includes a logframe, data collection forms, and a quarterly reporting template built in Google Sheets.</p>
+          <div class="project-tags">
+            <span class="project-tag">Logical Framework</span>
+            <span class="project-tag">Google Sheets</span>
+            <span class="project-tag">KoboToolbox</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <p class="project-title">Executive Assistant Simulation — 2-Week Calendar &amp; Inbox Audit</p>
+            <span class="project-type">VA</span>
+          </div>
+          <p class="project-desc">Organized and categorized a mock executive inbox of 200+ emails, created a structured weekly calendar template, and drafted 5 sample client-facing emails across different tones and scenarios.</p>
+          <div class="project-tags">
+            <span class="project-tag">Gmail</span>
+            <span class="project-tag">Google Calendar</span>
+            <span class="project-tag">Email Drafting</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <p class="project-title">AI Content Annotation — Mindrift Platform</p>
+            <span class="project-type">AI Training</span>
+          </div>
+          <p class="project-desc">Completed data annotation and content quality review tasks on the Mindrift platform, evaluating AI-generated outputs for accuracy, tone, and safety across multiple categories.</p>
+          <div class="project-tags">
+            <span class="project-tag">Data Annotation</span>
+            <span class="project-tag">RLHF</span>
+            <span class="project-tag">Content Review</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <p class="section-label">Get in touch</p>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:joykerubo01@gmail.com">
+            <i class="ti ti-mail" aria-hidden="true"></i>
+            <div>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">joykerubo01@gmail.com</span>
+            </div>
+          </a>
+          <a class="contact-item" href="https://www.linkedin.com/in/joy-kerubo-873271217" target="_blank" rel="noopener">
+            <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">linkedin.com/in/joy-kerubo</span>
+            </div>
+          </a>
+          <div class="contact-item">
+            <i class="ti ti-world" aria-hidden="true"></i>
+            <div>
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Nairobi, Kenya · UTC+3</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="ti ti-clock" aria-hidden="true"></i>
+            <div>
+              <span class="contact-label">Availability</span>
+              <span class="contact-value">Open to work · Responds in 24h</span>
+            </div>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a class="btn-primary" href="mailto:joykerubo01@gmail.com">
+            <i class="ti ti-send" aria-hidden="true"></i>Send me an email
+          </a>
+          <a class="btn-outline" href="https://www.linkedin.com/in/joy-kerubo-873271217" target="_blank" rel="noopener">
+            <i class="ti ti-brand-linkedin" aria-hidden="true"></i>View LinkedIn
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Joy Nyong'a · Virtual Assistant &amp; M&amp;E Specialist · Kenya</p>
+  </footer>
+
+</body>
+</html>
